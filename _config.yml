@@ -99,5 +99,5 @@ theme: fluid   # 指定主题
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/WuNull/lingyangcj.github.io.git
+  repo: https://github.com/lingyangcj/lingyangcj.github.io.git
   branch: master
