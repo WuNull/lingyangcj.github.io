@@ -22,8 +22,8 @@
 </p>
 
 <p align="center">
-  <span>Demo：</span>
-  <a href="https://rook1e.com">Rook1e's blog</a>&nbsp&nbsp&nbsp&nbsp
+  <span>Preview: </span>
+  <a href="https://hexo.fluid-dev.com/">demo</a>&nbsp&nbsp&nbsp&nbsp
   <a href="https://zkqiang.cn">zkqiang's blog</a>
 </p>
 
@@ -49,7 +49,7 @@ theme: fluid
 
 #### 4. Create About Page
 
-Since v1.7.0, the about page needs to be created manually:
+The about page needs to be created manually:
 
 ```bash
 $ hexo new page about
@@ -57,16 +57,16 @@ $ hexo new page about
 
 Then edit `/source/about/index.md` and add `layout` attribute.
 
-The modified file example is as follows:
+The modified example is as follows:
 
 ```yml
+---
 title: about
 date: 2020-02-23 19:20:33
 layout: about
 ---
 
-You can write the content here
-Support Markdown, HTML
+About content
 ```
 
 ## How to Upgrade
@@ -84,6 +84,7 @@ Support Markdown, HTML
 - [x] Detailed [documents](https://hexo.fluid-dev.com/docs/en/)
 - [x] Built-in search plugin
 - [x] Website analysis
+- [x] Support for footnote
 - [x] Support for LaTeX
 - [x] Support for mermaid
 - [x] Music player

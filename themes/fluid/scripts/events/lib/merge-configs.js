@@ -6,14 +6,20 @@ const yaml = require('js-yaml');
 const objUtil = require('../../utils/object');
 
 module.exports = (hexo) => {
-  let sourceConfig;
-  let staticPrefix;
+  let sourceConfig, staticPrefix;
 
   if (hexo.locals.get) {
     const data = hexo.locals.get('data');
     sourceConfig = {};
     if (data && data.fluid_config) {
       sourceConfig = data.fluid_config;
+    } else {
+      const isZh = hexo.config.language.search(/zh-CN/i) !== -1;
+      if (isZh) {
+        hexo.log.warn('推荐你使用覆盖配置功能: https://hexo.fluid-dev.com/docs/guide/#%E8%A6%86%E7%9B%96%E9%85%8D%E7%BD%AE');
+      } else {
+        hexo.log.warn('It is recommended that you use override configuration: https://hexo.fluid-dev.com/docs/en/guide/#override-configuration');
+      }
     }
     staticPrefix = {};
     if (data && data.fluid_static_prefix) {

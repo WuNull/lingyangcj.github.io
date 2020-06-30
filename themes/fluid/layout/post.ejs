@@ -14,8 +14,12 @@ page.banner_mask_alpha = theme.post.banner_mask_alpha
         <div class="py-5" id="board">
           <div class="post-content mx-auto" id="post">
             <% if(theme.post.updated && theme.post.updated.enable) { %>
-              <p class="note note-warning">
-                <%- theme.post.updated.content %><%- date(page.updated, theme.post.meta.date.format) %>
+              <p class="note note-info">
+                <% if (theme.post.updated.relative) { %>
+                  <%- theme.post.updated.content %><%- relative_date(page.updated, theme.post.meta.date.format) %>
+                <% } else { %>
+                  <%- theme.post.updated.content %><%- date(page.updated, theme.post.meta.date.format) %>
+                <% } %>
               </p>
             <% } %>
             <article class="markdown-body">
@@ -28,7 +32,7 @@ page.banner_mask_alpha = theme.post.banner_mask_alpha
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     <% page.categories.each(function(cate) { %>
-                      <a class="hover-with-bg" href="<%- url_for(cate.path) %>"><%= cate.name %></a>
+                      <a class="hover-with-bg" href="<%= url_for(cate.path) %>"><%- cate.name %></a>
                     <% }) %>
                   </div>
                 <% } %>
@@ -36,12 +40,12 @@ page.banner_mask_alpha = theme.post.banner_mask_alpha
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     <% page.tags.each(function(tag) { %>
-                      <a class="hover-with-bg" href="<%- url_for(tag.path) %>"><%= tag.name %></a>
+                      <a class="hover-with-bg" href="<%= url_for(tag.path) %>"><%- tag.name %></a>
                     <% }) %>
                   </div>
                 <% } %>
               </div>
-              <% if(theme.post.copyright.enable && theme.post.copyright.content) { %>
+              <% if(theme.post.copyright.enable && theme.post.copyright.content && page.copyright !== false) { %>
                 <p class="note note-warning"><%- theme.post.copyright.content %></p>
               <% } %>
               <% if(theme.post.prev_next.enable && !page.hide) { %>
@@ -52,7 +56,7 @@ page.banner_mask_alpha = theme.post.banner_mask_alpha
                       <a href="<%= url_for(prev.path) %>">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile"><%- prev.title %></span>
-                        <span class="visible-mobile">上一篇</span>
+                        <span class="visible-mobile"><%= __('post.pre') %></span>
                       </a>
                     <% } %>
                   </div>
@@ -61,7 +65,7 @@ page.banner_mask_alpha = theme.post.banner_mask_alpha
                     <% if (next) { %>
                       <a href="<%= url_for(next.path) %>">
                         <span class="hidden-mobile"><%- next.title %></span>
-                        <span class="visible-mobile">下一篇</span>
+                        <span class="visible-mobile"><%= __('post.next') %></span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     <% } %>
@@ -90,10 +94,10 @@ page.banner_mask_alpha = theme.post.banner_mask_alpha
 </div>
 
 <!-- Custom -->
-<% if(theme.post.custom.enable) { %>
+<% if(theme.post.custom.enable && theme.post.custom.content && page.custom !== false) { %>
   <div class="col-lg-7 mx-auto nopadding-md">
     <div class="container custom post-content mx-auto">
-      <%- theme.post.custom.content %>
+      <%- page.custom || theme.post.custom.content %>
     </div>
   </div>
 <% } %>

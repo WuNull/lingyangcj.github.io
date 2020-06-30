@@ -19,13 +19,12 @@
 <p align="center">
   <span>文档：</span>
   <a href="https://hexo.fluid-dev.com/docs/">用户手册</a>&nbsp&nbsp&nbsp&nbsp
-  <a href="https://github.com/fluid-dev/hexo-theme-fluid/blob/master/Changelog.md">更新日志</a>&nbsp&nbsp&nbsp&nbsp
   <a href="https://hexo.io/zh-cn/docs/front-matter">文章配置</a>
 </p>
 
 <p align="center">
   <span>预览：</span>
-  <a href="https://rook1e.com">Rook1e's blog</a>&nbsp&nbsp&nbsp&nbsp
+  <a href="https://hexo.fluid-dev.com/">demo</a>&nbsp&nbsp&nbsp&nbsp
   <a href="https://zkqiang.cn">zkqiang's blog</a>
 </p>
 
@@ -53,7 +52,7 @@ language: zh-CN  # 指定语言，可不改
 
 #### 4. 创建「关于页」
 
-自 v1.7.0 开始，「关于页」需要手动创建：
+首次使用主题的「关于页」需要手动创建：
 
 ```bash
 $ hexo new page about
@@ -64,12 +63,13 @@ $ hexo new page about
 修改后的文件示例如下：
 
 ```yml
+---
 title: about
 date: 2020-02-23 19:20:33
 layout: about
 ---
 
-这里写正文，支持 Markdown, HTML
+这里写关于页的正文，支持 Markdown, HTML
 ```
 
 ## 升级主题
@@ -90,6 +90,7 @@ layout: about
 - [x] 内置文章搜索
 - [x] 页脚备案信息
 - [x] 网页访问统计
+- [x] 支持脚注语法
 - [x] 支持 LaTeX 数学公式
 - [x] 支持 mermaid 流程图
 - [x] 音乐播放器
@@ -104,9 +105,27 @@ layout: about
 
 如你也想贡献代码，可参照[贡献指南](https://hexo.fluid-dev.com/docs/contribute/)
 
-## 反馈
+## 社区
 
-- 微信群：扫描后添加好友，**回复「fluid」**（在聊天回复，不是加好友验证）自动拉群<details> <summary>二维码</summary><img width="250" src="https://cdn.jsdelivr.net/gh/fluid-dev/static@master/hexo-theme-fluid/wechat.jpeg"></details>
+微信群：扫描二维码添加好友进交流群
+
+<details>
+    <summary>二维码</summary>
+    <p><b>好友申请备注：fluid</b></p>
+    <p><b>提问之前请先仔细查阅用户文档</b></p>
+    <img width="200" src="https://cdn.jsdelivr.net/gh/fluid-dev/static@master/hexo-theme-fluid/wechat.png" alt="wechat">
+</details>
+
+## 赞助
+
+你可以通过下方二维码赞助本项目，资金将用于服务器开销以及今后的公共接口服务
+
+<details>
+    <summary>二维码</summary>
+    <img width="600" src="https://cdn.jsdelivr.net/gh/fluid-dev/static@master/hexo-theme-fluid/sponsor.png" alt="sponsor">
+</details>
+
+其他商业赞助可发送邮件至 zkqiang#126.com (#替换为@)
 
 ## Star 趋势
 
